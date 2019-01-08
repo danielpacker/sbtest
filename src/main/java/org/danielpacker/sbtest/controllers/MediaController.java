@@ -28,9 +28,9 @@ public class MediaController {
         return ms.getAllByTitle(title);
     }
 
-
     @GetMapping(API + "/books")
     public MediaResponse allbooks() {
+
         return ms.getAllByAuthor("");
     }
 
@@ -42,11 +42,13 @@ public class MediaController {
 
     @GetMapping(API + "/movies")
     public MediaResponse allMovies() {
+
         return ms.getMoviesByTitle("");
     }
 
     @GetMapping(API + "/movies" + "/title/{title}")
     public MediaResponse moviesByTiitle(@PathVariable String title) {
+
         return ms.getMoviesByTitle(title);
     }
 }
