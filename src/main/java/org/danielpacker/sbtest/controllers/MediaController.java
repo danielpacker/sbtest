@@ -19,9 +19,15 @@ public class MediaController {
     }
 
     @GetMapping(API)
-    public MediaResponse media(@RequestParam(value="title", defaultValue="") String title) {
+    public MediaResponse allMedia() {
+        return ms.getAllByTitle("");
+    }
+
+    @GetMapping(API + "/title/{title}")
+    public MediaResponse mediaByTitle(@PathVariable String title) {
         return ms.getAllByTitle(title);
     }
+
 
     @GetMapping(API + "/books")
     public MediaResponse allbooks() {
